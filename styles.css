@@ -1,0 +1,128 @@
+/* Custom CSS Variables */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --font-color: #333;
+    --font-size: 16px;
+    --spacing: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: var(--font-size);
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: var(--spacing);
+}
+
+.logo {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.navbar a {
+    color: #fff;
+    margin: 0 var(--spacing);
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--spacing);
+}
+
+.intro {
+    flex: 1 1 100%;
+    margin-bottom: var(--spacing);
+}
+
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing);
+    flex: 1 1 60%;
+}
+
+.article {
+    background-color: #f9f9f9;
+    padding: var(--spacing);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+}
+
+.sidebar {
+    flex: 1 1 30%;
+    background-color: var(--secondary-color);
+    padding: var(--spacing);
+    color: #fff;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: var(--spacing) 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: var(--spacing);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .articles, .sidebar {
+        flex: 1 1 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-in-out;
+}
