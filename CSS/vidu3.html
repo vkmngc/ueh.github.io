@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        figure {    
+            background-color: blue;
+            width: 200px;                    
+            transform: rotate(45deg);
+        }
+        figure img{
+            transform: translatex(100px) translatey(-30px);
+            filter: grayscale(100%);
+        }
+        figure img {
+            background-color: #146d37;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
+            transition-delay: 0s;
+        }
+
+        figure img:hover {
+            background-color: #60b946;
+        }
+
+
+        div.at-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+	.at-item {
+		width: 500px; height: 500px; background:url(https://product.hstatic.net/200000462939/product/10007_be09cf3403a445c68d412d50a17e09cf_master.jpeg) no-repeat; 
+		
+		animation-name: bg-pan-right;
+		animation-duration: 3s;
+		animation-timing-function: linear;
+		animation-delay: 0s;
+		animation-iteration-count: infinite;
+		animation-direction: normal;
+		animation-fill-mode: none;
+			
+		/* shorthand
+		animation: bg-pan-right 1.2s linear 0s infinite normal none;*/
+	}
+	@keyframes bg-pan-right {
+			
+		0% {
+			background-position:0% 50%;
+		}
+		100% {
+			background-position:100% 50%;
+		}
+	}
+    </style>
+</head>
+<body>
+    <figure>
+        <img width="200" src="https://bit.ueh.edu.vn/wp-content/uploads/2017/06/BIT_logo.png">
+        <figcaption>BIT</figcaption>
+    </figure>
+    <div class='at-container'>
+        <div class='at-item' ></div>
+    </div>
+</body>
+</html>
